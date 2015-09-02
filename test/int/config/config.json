@@ -1,0 +1,80 @@
+{
+  "env": {
+    "NODE_ENV": "test"
+  },
+  "debug": {
+    "active": true,
+    "liveReload": ["/norman"]
+  },
+  "logging": {
+    "output": {
+      "stdout": {
+        "type": "console"
+      }
+    },
+    "loggers": {
+      "*": {
+        "stdout": "debug"
+      },
+      "test": {
+        "stdout": "debug"
+      }
+    }
+  },
+  "db": {
+    "hosts": "localhost",
+    "database": "norman-test-admin-users",
+    "options": {
+      "db": {
+        "safe": {
+          "w": 1
+        }
+      },
+      "server": {
+        "poolSize": 1,
+        "socketOptions": {
+          "keepAlive": 1
+        }
+      }
+    }
+  },
+  "deployment": {
+    "strategy": "single"
+  },
+  "services": "services.json",
+  "features": "features.json",
+  "web": {
+    "root": "../../dev",
+    "indexFallback": [
+      "/verifyemail",
+      "/auth",
+      "/auth/*",
+      "/login",
+      "/signup",
+      "/norman",
+      "/forgot-password",
+      "/reset-password/*"
+    ],
+    "compression": {
+      "threshold": 512
+    }
+  },
+  "security": "security.json",
+  "account": {
+    "accountNameMinlength": 3,
+    "accountNameMaxlength": 120,
+    "forgotPasswordTokenExpiryInDays": 1,
+    "autoResendEmailVerification": true,
+    "emailVerifingTokenExpiryInDays": 30,
+    "emailHasAlreadyVerified": "Your email address has been already verified.",
+    "recoverAccountPasswordTokenExpiredMessage": "The resource your are looking for hasbeen expired, please try again later.",
+    "recoverAccountPasswordTokenVerifiedMessage": "Your email address has been verified."
+  },
+  "access": {
+    "defaultPermissions": [
+      {"access": "standard"},
+      {"study": "participant"},
+      {"project": "collaborator"}
+    ]
+  }
+}

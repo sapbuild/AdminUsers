@@ -1,0 +1,16 @@
+<div class="admin-users-header">
+    <div class="title">Users List</div>
+
+    <div class="usersMenu" layout="row">
+        <input class="inputSearch" ng-model="search.value" ng-change="_onSearch()" type="search" placeholder="Search by name or email">
+        <span class="viewBy">View by:</span>
+        <div ng-class="{active : displaySimple}" class="action-item icon_view_simple" ng-click="setSimpleDisplay(true)"></div>
+        <div ng-class="{active : !displaySimple}" class="action-item icon_view_details"  ng-click="setSimpleDisplay(false)"></div>
+    </div>
+</div>
+
+<br/>
+
+<div class="admin-users-count">{{nbUsers}} Users</div>
+
+<br/>
