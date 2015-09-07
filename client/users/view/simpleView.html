@@ -1,0 +1,10 @@
+<div ng-if="displaySimple" ng-repeat="user in users" class="simpleBox"
+     ng-mouseenter="setMouseEnter(user)"
+     ng-mouseleave="setMouseLeave(user)">
+
+    <div  ng-click="_openDialog(user)">
+        <ui-avatar avatar-image="{{user.avatar_url}}" avatar-name={{user.name}} class="profilePicture" ng-class="{hovered: user.hovered}"></ui-avatar >
+        <div class="name">{{user.name}}</div>
+    </div>
+    <div ng-show="user.hovered" class="closeIcon icon-trash" ng-click="_getInfoToDelete(user)"></div>
+</div>
