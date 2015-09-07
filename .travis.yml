@@ -8,3 +8,5 @@ node_js:
   
 script:
   - gulp dist 
+  
+after_script: "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
