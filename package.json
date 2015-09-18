@@ -33,6 +33,7 @@
     "norman-testing-tp": "0.3.0",
     "norman-testing-tp-client": "0.3.0",
     "norman-audit-server": "0.3.0",
-    "norman-auth-server": "0.3.0"
+    "norman-auth-server": "0.3.0",
+    "node-sap-app-server": "0.3.0"
   }
 }
